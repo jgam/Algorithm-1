@@ -6,7 +6,7 @@ import java.util.*;
 class File {
 	int idx;
 	int pri;
-
+	
 	File(int idx, int pri) {
 		this.idx = idx;
 		this.pri = pri;
