@@ -23,7 +23,7 @@ public class BeakDynamic {
 					list[i][j] = list[i - 1][j - 1] + list[i][j];
 				else
 					list[i][j] = Math.max(list[i - 1][j - 1], list[i - 1][j]) + list[i][j];
-				
+					
 				if (sum < list[i][j])
 					sum = list[i][j];
 			}
