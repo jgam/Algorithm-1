@@ -30,10 +30,10 @@ public class BeakDFS {
 
 		while (testCase-- > 0) {
 			st = new StringTokenizer(br.readLine());
-
+			
 			COL = Integer.parseInt(st.nextToken());
 			ROW = Integer.parseInt(st.nextToken());
-
+			
 			int lineCnt = Integer.parseInt(st.nextToken());
 
 			// 값 초기화
