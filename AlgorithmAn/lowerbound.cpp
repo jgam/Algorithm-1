@@ -5,7 +5,7 @@
 using namespace std;
 
 long long int build[1000001];
-long long int tot, last;
+long long int tot, last; //
 
 bool cmp(int a, int b)
 {
