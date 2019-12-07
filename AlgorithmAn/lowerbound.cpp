@@ -1,3 +1,4 @@
+
 #include <cstdio>
 #include <iostream>
 #include <string>
@@ -5,7 +6,7 @@
 using namespace std;
 
 long long int build[1000001];
-long long int tot, last; //ewe
+long long int tot, last; 
 
 bool cmp(int a, int b)
 {
@@ -25,11 +26,12 @@ int main(void)
 	{
 		long long int h;
 		scanf("%d", &h);
-		last = (int)(lower_bound(build, build + last + 1, h, cmp) - build);
+		last = (int)(lower_bound(build, build + last + 1, h, cmp));
+		printf("%d\n", build);
 		tot += last;
 		build[last] = h;
 	}
-
+	
 	printf("%lld\n", tot);
 	return 0;
 }

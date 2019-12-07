@@ -29,5 +29,14 @@
     <ClCompile Include="lowerbound.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="algorithms.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Lake.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="SafeZone.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
