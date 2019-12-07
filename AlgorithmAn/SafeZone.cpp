@@ -4,7 +4,7 @@
 
 #define endl "\n"
 #define MAX 100
-using namespace std;
+using namespace std;			
 
 int N, Max_Height_Area, Answer, Num_Area;
 int MAP[MAX][MAX], C_MAP[MAX][MAX];
