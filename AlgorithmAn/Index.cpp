@@ -1,3 +1,56 @@
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+const int MAX = 100000;
+int N, M;
+pair<int, int> arr[MAX + 1]; //value, idx
+
+int Kth(int start, int end, int k)
+{
+	int cnt = 0;
+	for (int i = 0; i < N; i++)
+	{
+		//second가 인덱스이므로
+		if (start <= arr[i].second && arr[i].second <= end)
+			cnt++;
+
+		//k 번째 숫자 반환
+		if (cnt == k)
+			return arr[i].first;
+	}
+	return -1;
+}
+
+int main(void)
+{
+	ios_base::sync_with_stdio(0);
+	cin.tie(0); //cin 실행속도 향상
+	cin >> N >> M;
+
+	for (int i = 0; i < N; i++)
+	{
+		cin >> arr[i].first;
+		arr[i].second = i + 1;
+	}
+
+	//value 기준으로 오름차순 정렬
+	sort(arr, arr + N);
+
+	for (int i = 0; i < M; i++)
+	{
+		int start, end, k;
+		cin >> start >> end >> k;
+
+		cout << Kth(start, end, k) << "\n";
+	}
+	return 0;
+}
+
+
+
+
+/*
 #include<iostream>
 #include<cstring>
 #include<queue>
@@ -127,3 +180,4 @@ int main(void)
 
 	return 0;
 }
+*/

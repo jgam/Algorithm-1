@@ -35,7 +35,10 @@
     <ClCompile Include="Lake.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="SafeZone.cpp">
+    <ClCompile Include="Index.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Tree.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
