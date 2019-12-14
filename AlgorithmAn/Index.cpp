@@ -20,7 +20,7 @@ int Kth(int start, int end, int k)
 			return arr[i].first;
 	}
 	return -1;
-}
+}//
 
 int main(void)
 {
