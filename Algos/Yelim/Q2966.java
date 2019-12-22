@@ -6,45 +6,45 @@ public class Q2966Test {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		int n = sc.nextInt(); // ¹®Á¦ÀÇ ¼ö (1<=n<=100)
+		int n = sc.nextInt(); // ë¬¸ì œì˜ ìˆ˜ (1<=n<=100)
 
-		String ans1[] = new String[101]; // »ó±ÙÀÌ Á¤´ä 100/3 = 1
-		String ans2[] = new String[101]; // Ã¢¿µÀÌ Á¤´ä 100/4 = 0
-		String ans3[] = new String[101]; // ÇöÁøÀÌ Á¤´ä 100/6 = 4
+		String ans1[] = new String[101]; // ìƒê·¼ì´ ì •ë‹µ 100/3 = 1
+		String ans2[] = new String[101]; // ì°½ì˜ì´ ì •ë‹µ 100/4 = 0
+		String ans3[] = new String[101]; // í˜„ì§„ì´ ì •ë‹µ 100/6 = 4
 		// A B C
 		// B A B C
 		// C C A A B B
 		
-		// 1. »ó±ÙÀÌ,Ã¢¿µÀÌ,ÇöÁøÀÌÀÇ Á¤´äÆÐÅÏ¿¡ ¸Â°Ô ¹è¿­ String »ý¼º
-		String repeated1 = new String(new char[99]).replace("\0", "ABC");
+		// 1. ìƒê·¼ì´,ì°½ì˜ì´,í˜„ì§„ì´ì˜ ì •ë‹µíŒ¨í„´ì— ë§žê²Œ ë°°ì—´ String ìƒì„±
+		String repeated1 = new String(new char[33]).replace("\0", "ABC");
 		repeated1 = repeated1.concat("A");
-		ans1 = repeated1.split(""); // ¹è¿­¿¡ °¢ÀÚÀÇ Á¤´äÀ» ÀüºÎ ´ãÀ½
+		ans1 = repeated1.split(""); // ë°°ì—´ì— ê°ìžì˜ ì •ë‹µì„ ì „ë¶€ ë‹´ìŒ
 		String repeated2 = new String(new char[25]).replace("\0", "BABC");
 		ans2 = repeated2.split("");
 		String repeated3 = new String(new char[16]).replace("\0", "CCAABB");
 		repeated3 = repeated3.concat("CCAA");
 		ans3 = repeated3.split("");
 
-		// 2. ¹®Á¦ÀÇ Á¤´ä ÀÔ·Â¹ÞÀ½ (ex. AAAABBBBB)
+		// 2. ë¬¸ì œì˜ ì •ë‹µ ìž…ë ¥ë°›ìŒ (ex. AAAABBBBB)
 		String str = sc.next().toUpperCase();
 		str = str.substring(0,n);
 		String answer[] = new String[101];
-		answer = str.split(""); // Á¤´ä ¹®ÀÚ¿­µµ ¹è¿­¿¡ ³ÖÀ½
+		answer = str.split(""); // ì •ë‹µ ë¬¸ìžì—´ë„ ë°°ì—´ì— ë„£ìŒ
 		
-		// 3. ¹®Á¦ Á¤´ä°ú 3¸íÀÇ Á¤´äÀ» ºñ±³ÇÏ¿© ¸ÂÀº °¹¼ö Ã¼Å©
+		// 3. ë¬¸ì œ ì •ë‹µê³¼ 3ëª…ì˜ ì •ë‹µì„ ë¹„êµí•˜ì—¬ ë§žì€ ê°¯ìˆ˜ ì²´í¬
 		int i = 0;
 		int cnt1 =0; int cnt2=0; int cnt3=0;
 		while (i < n) {
-			if (answer[i].equals(ans1[i]))	// »ó±ÙÀÌ Á¤´ä (Adrian)
+			if (answer[i].equals(ans1[i]))	// ìƒê·¼ì´ ì •ë‹µ (Adrian)
 				cnt1 ++;
-			if (answer[i].equals(ans2[i])) // Ã¢¿µÀÌ Á¤´ä (Bruno)
+			if (answer[i].equals(ans2[i])) // ì°½ì˜ì´ ì •ë‹µ (Bruno)
 				cnt2 ++;
-			if (answer[i].equals(ans3[i])) // ÇöÁøÀÌ Á¤´ä (Goran)
+			if (answer[i].equals(ans3[i])) // í˜„ì§„ì´ ì •ë‹µ (Goran)
 				cnt3 ++;
 			i++;
 		}
 		
-		// 4. °¡Àå ¸¹Àº ¹®Á¦¸¦ ¸ÂÃá °¹¼ö¸¦ º¯¼ö max ¿¡´Ù Áý¾î³ÖÀ½
+		// 4. ê°€ìž¥ ë§Žì€ ë¬¸ì œë¥¼ ë§žì¶˜ ê°¯ìˆ˜ë¥¼ ë³€ìˆ˜ max ì—ë‹¤ ì§‘ì–´ë„£ìŒ
 		int max=0;
 		int[] arr = {cnt1,cnt2,cnt3};
 		for(i=0; i<3; i++) {
@@ -52,9 +52,9 @@ public class Q2966Test {
 				max = arr[i];
 			}
 		}
-		System.out.println(max); // °¡Àå ¸¹Àº ¹®Á¦¸¦ ¸ÂÃá »ç¶÷ÀÌ ¸î ¹®Á¦ ¸ÂÃè´ÂÁö Ãâ·Â
+		System.out.println(max); // ê°€ìž¥ ë§Žì€ ë¬¸ì œë¥¼ ë§žì¶˜ ì‚¬ëžŒì´ ëª‡ ë¬¸ì œ ë§žì·„ëŠ”ì§€ ì¶œë ¥
 		
-		// 5. ÃÖ´ÙÁ¤´ä°¹¼ö max¿Í °°Àº ¼ýÀÚ°¡ ÀÖ´Â ¹è¿­ ¿ø¼Ò¸¦ Ã£¾Æ Ardian - Bruno - Goran ¼ø¼­´ë·Î Ãâ·Â
+		// 5. ìµœë‹¤ì •ë‹µê°¯ìˆ˜ maxì™€ ê°™ì€ ìˆ«ìžê°€ ìžˆëŠ” ë°°ì—´ ì›ì†Œë¥¼ ì°¾ì•„ Ardian - Bruno - Goran ìˆœì„œëŒ€ë¡œ ì¶œë ¥
 		for (i=0; i<3; i++) {
 			if(arr[i]==max) {
 				switch(i) {
