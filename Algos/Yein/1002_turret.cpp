@@ -12,20 +12,21 @@ int main(void){
         
 
         double dist = sqrt(pow(x2- x1, 2) + pow(y2 - y1, 2));
-        int b = max(r1, r2);
-        int s = min(r1, r2);
+        
+        int big = max(r1, r2);
+        int small = min(r1, r2);
 
-        if(d == 0.0){
+        if(dist == 0.0){
             if(big == small)
-                ret = -1;//µ¿ÀÏÇÑ ¿øÀÎ °æ¿ì 
+                ret = -1;//ë™ì¼í•œ ì›ì¸ ê²½ìš° 
             else
-                ret = 0;//°ãÄ¡Áö ¾Ê À½ (Å« ¿ø¾È¿¡ ÀÛÀº ¿øÀÌ µé¾î ÀÖÀ½) 
+                ret = 0;//ê²¹ì¹˜ì§€ ì•Š ìŒ (í° ì›ì•ˆì— ì‘ì€ ì›ì´ ë“¤ì–´ ìˆìŒ) 
         }else{
-            if(big-small < d && big+small > d)//¿øÀÇ µÎÁ¡ÀÌ °ãÄ¡´Â °æ ¿ì 
+            if(big-small < dist && big+small > dist)//ì›ì˜ ë‘ì ì´ ê²¹ì¹˜ëŠ” ê²½ ìš° 
                 ret = 2;
-            else if(big+small == d || big-small == d) //³»Á¢, ¿ÜÁ¢ 
+            else if(big+small == dist || big-small == dist) //ë‚´ì ‘, ì™¸ì ‘ 
                 ret = 1;
-            else //¸Ö¸® ¶³¾îÁ® ÀÖ¾î °ãÄ¡Áö ¾Ê´Â °æ¿ì 
+            else //ë©€ë¦¬ ë–¨ì–´ì ¸ ìˆì–´ ê²¹ì¹˜ì§€ ì•ŠëŠ” ê²½ìš° 
                 ret = 0;
         }
         cout<<ret<<endl;
